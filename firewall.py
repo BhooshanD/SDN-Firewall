@@ -17,8 +17,7 @@ class FirewallController(app_manager.RyuApp):
         # Blocked IP pairs (bidirectional)
         # Add or remove pairs here as needed
         self.blocked_pairs = {
-            ('10.0.0.1', '10.0.0.2'),
-            ('10.0.0.3','10.0.0.4')
+            ('10.0.0.1', '10.0.0.2')
         }
 
     def is_blocked(self, src_ip, dst_ip):
