@@ -69,3 +69,15 @@ sh ovs-ofctl -O OpenFlow13 dump-flows s2
 ```
 
 ## Topology
+h1 ──┐         ┌── h3
+s1 ───── s2
+h2 ──┘         └── h4
+
+## Modifying Blocked Pairs
+Edit the `blocked_pairs` set in `firewall.py`:
+```python
+self.blocked_pairs = {
+    ('10.0.0.1', '10.0.0.2'),  # blocks h1 <-> h2
+    ('10.0.0.3', '10.0.0.4'),  # blocks h3 <-> h4
+}
+```
